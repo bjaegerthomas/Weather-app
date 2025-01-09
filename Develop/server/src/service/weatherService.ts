@@ -51,8 +51,8 @@ class WeatherService {
   // TODO: Create destructureLocationData method
   private destructureLocationData(locationData: Coordinates): Coordinates {
     return {
-      lat: locationData[0].lat,
-      lon: locationData[0].lon,
+      lat: locationData.lat,
+      lon: locationData.lon,
     };
   }
   // TODO: Create buildGeocodeQuery method
@@ -67,7 +67,7 @@ class WeatherService {
   private async fetchAndDestructureLocationData() {
     const query = this.buildGeocodeQuery();
     const locationData = await this.fetchLocationData(query);
-    return this.destructureLocationData(location);
+    return this.destructureLocationData(locationData);
   }
   // TODO: Create fetchWeatherData method
   private async fetchWeatherData(coordinates: Coordinates) {
@@ -87,24 +87,24 @@ class WeatherService {
     );
   }
   // TODO: Complete buildForecastArray method
-  private buildForecastArray(currentWeather: Weather, weatherData: any[]) {
+  private buildForecastArray(weatherData: any[]) {
     const forecastArray = weatherData.map((weather) => {
       return {
         date: weather.dt,
-        temp: weather.temp,
+        temp: weather.temp.day,
         weather: weather.weather[0].description,
         icon: weather.weather[0].icon,
       };
     });
     return forecastArray;
   }
-  // TODO: Complete getWeatherForCity method
+// TODO: Complete getWeatherForCity method
   async getWeatherForCity(city: string) {
     this.cityName = city;
     const location = await this.fetchAndDestructureLocationData();
     const weatherData = await this.fetchWeatherData(location);
     const currentWeather = this.parseCurrentWeather(weatherData);
-    const forecastArray = this.buildForecastArray(currentWeather, weatherData.daily);
+    const forecastArray = this.buildForecastArray(weatherData.daily);
     return { currentWeather, forecastArray };
   }
 }
