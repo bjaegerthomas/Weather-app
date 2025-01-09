@@ -15,10 +15,10 @@
   - [Questions](#questions)
 
   ## Description
-  This program allows you to check the weather in a user proviided city as well as keep a continually updated search history based on user input
+  This program allows you to check the weather in a user provided city as well as keep a continually updated search history based on user input.
 
   ## Installation
-  install
+  First you will need to clone the repo to your own local storage. 
 
   ## Usage
   usage
