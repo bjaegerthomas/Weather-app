@@ -26,7 +26,7 @@
   You also can simply visit my deployed version (https://weather-app-xzuf.onrender.com) and follow the usage instructions below.
 
   ## Usage
-  usage
+  Simply enter a city into the search bar at the far left of your screen.
 
   ## Contribution
   After cloning the repository be sure to create a new branch for your feature or fix.
