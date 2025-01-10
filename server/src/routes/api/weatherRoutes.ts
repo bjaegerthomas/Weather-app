@@ -11,15 +11,17 @@ router.post('/', async (req: Request, res: Response) => {
   try {
     const city = req.body.city;
   // TODO: GET weather data from city name
-    const weatherData = await WeatherService.getWeatherForCity(city);
-    res.json(weatherData);
   // TODO: save city to search history
-    const newCity = await HistoryService.addCity(city);
-    res.json(newCity);
-  } catch (error) {
+    const data = await WeatherService.getWeatherForCity(city);
+    await HistoryService.addCity(city);
+
+    res.json(data);
+    }
+   catch (error) {
     res.status(500).json({ error: 'Failed to retrieve weather data' });
   }
 });
+
 
 // TODO: GET search history
 router.get('/history', async (_req: Request, res: Response) => {
@@ -35,8 +37,13 @@ router.get('/history', async (_req: Request, res: Response) => {
 router.delete('/history/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    const updatedHistory = await HistoryService.removeCity(id);
-    res.json(updatedHistory);
+    if (!id) {
+      res.status(400).json({ error: 'Missing city id, it is required' });
+      return;
+    }
+    await HistoryService.removeCity(id);
+    res.json('City removed from search history');
+    
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete city from search history' });
   }
