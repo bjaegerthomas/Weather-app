@@ -26,7 +26,7 @@
   You also can simply visit my deployed version (https://weather-app-xzuf.onrender.com) and follow the usage instructions below.
 
   ## Usage
-  Simply enter a city into the search bar at the far left of your screen.
+  Simply enter a city into the search bar at the far left of your screen. Hit Enter or click on the Search button and you will get a 5 day forecast and current weather for that city.
 
   ## Contribution
   After cloning the repository be sure to create a new branch for your feature or fix.
