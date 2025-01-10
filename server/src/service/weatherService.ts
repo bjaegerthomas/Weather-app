@@ -40,8 +40,8 @@ class WeatherService {
   private cityName = '';
 
   constructor() {
-    this.baseURL = process.env.API_BASE_URL;
-    this.apiKey = process.env.API_KEY;
+    this.baseURL = process.env.API_BASE_URL || '';
+    this.apiKey = process.env.API_KEY || '';
   }
   // TODO: Create fetchLocationData method
   private async fetchLocationData(query: string) {
@@ -73,10 +73,10 @@ class WeatherService {
   private async fetchAndDestructureLocationData() {
     const query = this.buildGeocodeQuery();
     const locationData = await this.fetchLocationData(query);
-    return this.destructureLocationData(locationData);
+    return this.destructureLocationData(locationData as Coordinates);
   }
   // TODO: Create fetchWeatherData method
-  private async fetchWeatherData(coordinates: Coordinates) {
+  private async fetchWeatherData(coordinates: Coordinates): Promise<any> {
     const query = this.buildWeatherQuery(coordinates);
     const weatherData = await this.fetchLocationData(query);
     return weatherData;
