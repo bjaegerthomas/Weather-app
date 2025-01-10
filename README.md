@@ -18,7 +18,13 @@
   This program allows you to check the weather in a user provided city as well as keep a continually updated search history based on user input.
 
   ## Installation
-  First you will need to clone the repo to your own local storage. 
+  Because this a web specific program that uses an API from Open Weather (https://openweathermap.org/forecast5) you will be able to clone the repo:
+
+  `` git clone git@github.com:bjaegerthomas/Weather-app.git ``
+
+  But you will need to use a program like Render (https://render.com/) to deploy and use it or to see it's functionality.
+
+  You also can simply visit my deployed version (https://weather-app-xzuf.onrender.com) and follow the usage instructions below.
 
   ## Usage
   usage
