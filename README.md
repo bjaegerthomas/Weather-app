@@ -11,7 +11,6 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contribution](#contribution)
-  - [Tests](#tests)
   - [Questions](#questions)
 
   ## Description
@@ -30,10 +29,11 @@
   usage
 
   ## Contribution
-  contriibute
-
-  ## Tests
-  tests
+  After cloning the repository be sure to create a new branch for your feature or fix.
+  Make your changes and commit them with descriptive messages.
+  Submit a Pull Request with clear explanations of your modifications.
+  Use meaningful variable names and comments.
+  Follow guidelines for Javascript and Typescript code formatting.
 
   ## Questions
   - GitHub: [bjaegerthomas](https://github.com/bjaegerthomas)
