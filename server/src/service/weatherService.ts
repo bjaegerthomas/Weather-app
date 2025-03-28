@@ -12,31 +12,29 @@ interface Coordinates {
 }
 // TODO: Define a class for the Weather object
 class Weather {
-  temp: number;
   city: string;
-  humidity: number;
+  date: Dayjs | string;
+  temp: number;
   wind_speed: number;
-  date: string;
-  weather: string;
+  humidity: number;
   icon: string;
   iconDescription: string;
 
   constructor(
+    city: string,
+    date: Dayjs | string,
     temp: number,
-    city: string;
-    humidity: number,
     wind_speed: number,
-    date: dayjs | string;
-    weather: string;
+    humidity: number,
     icon: string,
     iconDescription: string
-  ) {
+  )
+  {
     this.temp = temp;
     this.city = city;
     this.humidity = humidity;
     this.wind_speed = wind_speed;
     this.date = date;
-    this.weather = weather;
     this.icon = icon;
     this.iconDescription = iconDescription;
   }
@@ -62,8 +60,9 @@ class WeatherService {
       const response: Coordinates[] = await fetch(query).then((res) =>
         res.json()
       );
+
       return response[0];
-    } catch (error) {
+      } catch (error) {
       console.error(error);
       throw error;
     }
