@@ -25,6 +25,10 @@
 
   You also can simply visit my deployed version (https://weather-app-xzuf.onrender.com) and follow the usage instructions below.
 
+  Here is a screenshot of the deployed application:
+
+  ![Weather App Screenshot](./assets/weatherApp.png)
+
   ## Usage
   Simply enter a city into the search bar at the far left of your screen. Hit Enter or click on the Search button and you will get a 5 day forecast and current weather for that city.
 
