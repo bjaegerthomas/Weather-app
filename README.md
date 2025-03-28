@@ -16,6 +16,8 @@
   ## Description
   This program allows you to check the weather in a user provided city as well as keep a continually updated search history based on user input.
 
+  Starter Code was provided for this application with portions left out in regards to API calls amnd routes which I was then required to fill in.
+
   ## Installation
   Because this a web specific program that uses an API from Open Weather (https://openweathermap.org/forecast5) you will be able to clone the repo:
 
